@@ -11,7 +11,7 @@ public class LPcontroller : MonoBehaviour
         Renderer renderer = collider.gameObject.GetComponent<Renderer>();
         if (renderer != null && renderer.sharedMaterial != targetMaterial)
         {
-            Debug.Log("tlqkf");
+            Debug.Log("¶Ç,,, ¶Ç ¿Ö,,,");
             Destroy(collider.gameObject);
         }
         else if (renderer != null && renderer.sharedMaterial == targetMaterial)

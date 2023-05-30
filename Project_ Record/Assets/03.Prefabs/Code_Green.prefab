@@ -51,8 +51,8 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3351164756421603794}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 991ad280a59c1cd459227c01de16c9de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 2
   destroyDelay: 8
