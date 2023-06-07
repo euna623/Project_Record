@@ -5,6 +5,13 @@ using UnityEngine;
 public class LPcontroller : MonoBehaviour
 {
     public Material targetMaterial; // 충돌 대상 메테리얼
+    private GameManager gameManager; // GameManager 오브젝트에 연결된 GameManager 스크립트 참조
+
+    private void Start()
+    {
+        // GameManager 오브젝트의 GameManager 스크립트 참조
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -17,6 +24,11 @@ public class LPcontroller : MonoBehaviour
         else if (renderer != null && renderer.sharedMaterial == targetMaterial)
         {
             Destroy(collider.gameObject);
+            if (gameManager != null)
+            {
+                // Score를 10 증가시킴
+                gameManager.IncreaseScore(10);
+            }
         }
     }
 }
