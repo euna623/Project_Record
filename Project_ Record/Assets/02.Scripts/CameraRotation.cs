@@ -16,7 +16,7 @@ public class CameraRotation : MonoBehaviour
         initialRotation = transform.rotation;
 
         // 회전 코루틴 시작
-        rotationCoroutine = StartCoroutine(PerformRotation());
+        StartCoroutine(StartRotationAfterDelay());
     }
 
     private IEnumerator PerformRotation()
@@ -50,5 +50,12 @@ public class CameraRotation : MonoBehaviour
         float[] rotationAmounts = { 90f, -90f, 180f, -180f , 0f };
         //Debug.Log(rotationAmounts[randomIndex] + "만큼 회전");
         return rotationAmounts[randomIndex];
+    }
+
+    private IEnumerator StartRotationAfterDelay()
+    {
+        yield return new WaitForSeconds(10f); // 10초 대기
+
+        rotationCoroutine = StartCoroutine(PerformRotation());
     }
 }
