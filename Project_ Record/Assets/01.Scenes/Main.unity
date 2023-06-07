@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationDuration: 1
-  rotationInterval: 2
+  rotationInterval: 10
 --- !u!1001 &1338492261
 PrefabInstance:
   m_ObjectHideFlags: 0

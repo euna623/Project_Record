@@ -950,6 +950,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collidedMaterial: {fileID: 2100000, guid: 05c340b34e68be84cb0c2d665b6e0dd7, type: 2}
+  mainCameraTransform: {fileID: 963194228}
+  cameraMoveDuration: 1
+  targetCameraY: 7.53
 --- !u!65 &3469287836774105189
 BoxCollider:
   m_ObjectHideFlags: 0
