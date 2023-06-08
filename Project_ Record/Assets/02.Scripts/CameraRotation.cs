@@ -46,8 +46,8 @@ public class CameraRotation : MonoBehaviour
 
     private float GetRandomRotationAmount()
     {
-        int randomIndex = Random.Range(0, 5);
-        float[] rotationAmounts = { 90f, -90f, 180f, -180f , 0f };
+        int randomIndex = Random.Range(0, 3);
+        float[] rotationAmounts = { 180f, -180f , 0f };
         //Debug.Log(rotationAmounts[randomIndex] + "만큼 회전");
         return rotationAmounts[randomIndex];
     }

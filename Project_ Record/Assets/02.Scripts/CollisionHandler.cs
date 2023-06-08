@@ -75,7 +75,7 @@ public class CollisionHandler : MonoBehaviour
 	private IEnumerator MoveCameraToTarget()
 	{
 		Vector3 startPosition = mainCameraTransform.position;
-		Vector3 targetPosition = new Vector3(startPosition.x, targetCameraY, startPosition.z);
+		Vector3 targetPosition = new Vector3(0, targetCameraY, startPosition.z);
 		float elapsedTime = 0f;
 
 		while (elapsedTime < cameraMoveDuration)
