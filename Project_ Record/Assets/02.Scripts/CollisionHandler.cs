@@ -15,6 +15,8 @@ public class CollisionHandler : MonoBehaviour
 
 	private Coroutine cameraMoveCoroutine; // 카메라 이동 코루틴
 
+	public AudioSource sf;
+
 	private void Start()
 	{
 		// 오브젝트의 원래 메테리얼 저장
@@ -31,11 +33,13 @@ public class CollisionHandler : MonoBehaviour
 		// Space 키를 눌렀을 때 씬 전환
 		if (startCollided && Input.GetKeyDown(KeyCode.Space))
 		{
+			sf.Play();
 			// 카메라 이동 코루틴 시작
 			cameraMoveCoroutine = StartCoroutine(MoveCameraToTarget());
 		}
 		else if (exitCollided && Input.GetKeyDown(KeyCode.Space))
 		{
+			sf.Play();
 			Debug.Log("나가기");
 			Application.Quit();
 		}
