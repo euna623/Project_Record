@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,11 +10,12 @@ public class GameManager : MonoBehaviour
     private int score = 0; // 현재 Score 값
 
     public GameObject menuSet;
-
-    public AudioSource musicSource; // AudioSource 컴포넌트
+    public AudioSource musicSource;
 
     private void Start()
     {
+        // 이전 씬에서 저장된 Score 값을 불러옴
+        score = PlayerPrefs.GetInt("Score", 0);
         UpdateScoreText();
     }
 
@@ -32,10 +33,14 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        // AudioSource의 재생이 끝났을 때 GameSet 씬으로 전환
-        if (!musicSource.isPlaying)
+        // AudioSource의 재생이 끝나면 GameSet 씬으로 이동
+        if (musicSource != null && !musicSource.isPlaying)
         {
-            LoadGameSetScene();
+            // Score 값을 PlayerPrefs에 저장
+            PlayerPrefs.SetInt("Score", score);
+            PlayerPrefs.Save();
+
+            SceneManager.LoadScene("GameSet");
         }
     }
 
@@ -64,10 +69,5 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("게임 종료");
-    }
-
-    private void LoadGameSetScene()
-    {
-        SceneManager.LoadScene("GameSet"); // GameSet 씬으로 전환
     }
 }
