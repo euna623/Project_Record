@@ -17,6 +17,8 @@ public class CollisionHandler : MonoBehaviour
 
 	public AudioSource sf;
 
+	private int score = 0;
+
 	private void Start()
 	{
 		// 오브젝트의 원래 메테리얼 저장
@@ -34,6 +36,9 @@ public class CollisionHandler : MonoBehaviour
 		if (startCollided && Input.GetKeyDown(KeyCode.Space))
 		{
 			sf.Play();
+			PlayerPrefs.SetInt("Score", score);
+			score = 0;
+			PlayerPrefs.Save();
 			// 카메라 이동 코루틴 시작
 			cameraMoveCoroutine = StartCoroutine(MoveCameraToTarget());
 		}

@@ -26,10 +26,12 @@ public class GameManager : MonoBehaviour
             if (menuSet.activeSelf)
             {
                 menuSet.SetActive(false);
+                Debug.Log(false);
             }
             else
             {
                 menuSet.SetActive(true);
+                Debug.Log(true);
             }
         }
 
@@ -69,5 +71,15 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("게임 종료");
+    }
+
+    public void ReStart()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+    public void Active()
+    {
+        menuSet.SetActive(false);
     }
 }
