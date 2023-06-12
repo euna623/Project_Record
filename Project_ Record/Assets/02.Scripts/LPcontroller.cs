@@ -18,7 +18,10 @@ public class LPcontroller : MonoBehaviour
         Renderer renderer = collider.gameObject.GetComponent<Renderer>();
         if (renderer != null && renderer.sharedMaterial != targetMaterial)
         {
-            Debug.Log("또,,, 또 왜,,,");
+            if (gameManager.GetScore() > 0) // Score가 0보다 큰 경우에만 실행
+            {
+                gameManager.IncreaseScore(-10);
+            }
             Destroy(collider.gameObject);
         }
         else if (renderer != null && renderer.sharedMaterial == targetMaterial)
