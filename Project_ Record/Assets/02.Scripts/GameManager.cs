@@ -82,4 +82,9 @@ public class GameManager : MonoBehaviour
     {
         menuSet.SetActive(false);
     }
+
+    public void Stage1()
+    {
+        SceneManager.LoadScene("Stage1");
+    }
 }
