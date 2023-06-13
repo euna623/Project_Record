@@ -99,7 +99,7 @@ public class CollisionHandler : MonoBehaviour
 		// 최종 위치 설정
 		mainCameraTransform.position = targetPosition;
 
-		// 카메라 이동이 완료되면 Choice 씬으로 전환
-		SceneManager.LoadScene("Choice");
+		// 카메라 이동이 완료되면 씬으로 전환
+		SceneManager.LoadScene("Stage1");
 	}
 }
