@@ -2019,6 +2019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 325742641}
   btnSource: {fileID: 867246965}
+  otherAudioSource: {fileID: 325742641}
   musicSlider: {fileID: 740832984}
   buttonSlider: {fileID: 168754690}
 --- !u!4 &1594266697
