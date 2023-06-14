@@ -7,6 +7,8 @@ public class SoundManager : MonoBehaviour
 {
     public AudioSource musicSource;
     public AudioSource btnSource;
+    public AudioSource otherAudioSource; // 다른 오브젝트의 AudioSource
+
     public Slider musicSlider;
     public Slider buttonSlider;
 
@@ -35,6 +37,7 @@ public class SoundManager : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         musicSource.volume = volume;
+        otherAudioSource.volume = volume;
 
         // 사운드 설정 값 저장
         PlayerPrefs.SetFloat(MusicVolumeKey, volume);
@@ -44,6 +47,7 @@ public class SoundManager : MonoBehaviour
     public void SetButtonVolume(float volume)
     {
         btnSource.volume = volume;
+        otherAudioSource.volume = volume;
 
         // 사운드 설정 값 저장
         PlayerPrefs.SetFloat(ButtonVolumeKey, volume);
@@ -53,6 +57,7 @@ public class SoundManager : MonoBehaviour
     public void OnBtn()
     {
         btnSource.Play();
+        otherAudioSource.Play(); // 다른 오브젝트의 AudioSource 재생
     }
 
     private void OnMusicSliderValueChanged(float value)
