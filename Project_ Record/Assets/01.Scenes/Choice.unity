@@ -1962,6 +1962,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1162854030}
   btnSource: {fileID: 892032983}
+  otherAudioSource: {fileID: 1162854030}
   musicSlider: {fileID: 426613639}
   buttonSlider: {fileID: 2144616009}
 --- !u!4 &1660575540
