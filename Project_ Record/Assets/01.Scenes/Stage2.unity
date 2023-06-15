@@ -1233,8 +1233,8 @@ MonoBehaviour:
   musicSource: {fileID: 418486761}
   btnSource: {fileID: 974986655}
   otherAudioSource: {fileID: 1475550914}
-  musicSlider: {fileID: 0}
-  buttonSlider: {fileID: 0}
+  musicSlider: {fileID: 1131541167}
+  buttonSlider: {fileID: 228234120}
 --- !u!1 &959104805
 GameObject:
   m_ObjectHideFlags: 0
