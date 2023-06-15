@@ -15,11 +15,14 @@ public class SoundManager : MonoBehaviour
     private const string MusicVolumeKey = "MusicVolume";
     private const string ButtonVolumeKey = "ButtonVolume";
 
+    private float musicVolume = 1f; // 배경음 볼륨 변수
+    private float buttonVolume = 1f; // 효과음 볼륨 변수
+
     private void Start()
     {
         // 이전에 저장된 사운드 설정 값 불러오기
-        float musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1f);
-        float buttonVolume = PlayerPrefs.GetFloat(ButtonVolumeKey, 1f);
+        musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, 1f);
+        buttonVolume = PlayerPrefs.GetFloat(ButtonVolumeKey, 1f);
 
         // 슬라이더에 설정 값 적용
         musicSlider.value = musicVolume;
@@ -36,8 +39,8 @@ public class SoundManager : MonoBehaviour
 
     public void SetMusicVolume(float volume)
     {
+        musicVolume = volume;
         musicSource.volume = volume;
-        otherAudioSource.volume = volume;
 
         // 사운드 설정 값 저장
         PlayerPrefs.SetFloat(MusicVolumeKey, volume);
@@ -46,8 +49,8 @@ public class SoundManager : MonoBehaviour
 
     public void SetButtonVolume(float volume)
     {
+        buttonVolume = volume;
         btnSource.volume = volume;
-        otherAudioSource.volume = volume;
 
         // 사운드 설정 값 저장
         PlayerPrefs.SetFloat(ButtonVolumeKey, volume);
@@ -68,5 +71,11 @@ public class SoundManager : MonoBehaviour
     private void OnButtonSliderValueChanged(float value)
     {
         SetButtonVolume(value);
+    }
+
+    private void Update()
+    {
+        // 배경음 볼륨 적용
+        otherAudioSource.volume = musicVolume;
     }
 }
