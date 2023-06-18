@@ -40,7 +40,8 @@ public class CollisionHandler : MonoBehaviour
 			score = 0;
 			PlayerPrefs.Save();
 			// 카메라 이동 코루틴 시작
-			cameraMoveCoroutine = StartCoroutine(MoveCameraToTarget());
+			//cameraMoveCoroutine = StartCoroutine(MoveCameraToTarget());
+			SceneManager.LoadScene("Choice");
 		}
 		else if (exitCollided && Input.GetKeyDown(KeyCode.Space))
 		{
